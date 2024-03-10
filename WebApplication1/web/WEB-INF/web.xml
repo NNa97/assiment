@@ -4,8 +4,16 @@
         <servlet-name>timetable</servlet-name>
         <servlet-class>controller.lecturer.TimeTableController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>AttendanceTakingController</servlet-name>
+        <servlet-class>controller.lecturer.AttendanceTakingController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>timetable</servlet-name>
         <url-pattern>/timetable</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AttendanceTakingController</servlet-name>
+        <url-pattern>/att</url-pattern>
     </servlet-mapping>
 </web-app>
