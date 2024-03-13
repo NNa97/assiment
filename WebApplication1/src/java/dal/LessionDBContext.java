@@ -23,15 +23,16 @@ import java.util.logging.Logger;
  */
 public class LessionDBContext extends DBContext<Lession> {
 
-      public void takeAttendances (int leid,ArrayList<Attendence> atts){
-          try {
-              connection.setAutoCommit(false);
-              String sql_remove_atts = "DELTE Attendence where leid = ?";
-                    PreparedStatement stm_remove_atts = connection.prepareStatement(sql_remove_atts);
-                    stm_remove_atts.setInt(1, leid);
-                    stm_remove_atts.executeUpdate();
-                    for(Attendence att : atts){
-                         String sql_insert_att = "INSERT INTO [Attendence]\n"
+    public void takeAttendances(int leid, ArrayList<Attendence> atts) {
+        try {
+            connection.setAutoCommit(false);
+            String sql_remove_atts = "DELETE FROM Attendence\n"
+                    + "       WHERE leid= ? ";
+            PreparedStatement stm_remove_atts = connection.prepareStatement(sql_remove_atts);
+            stm_remove_atts.setInt(1, leid);
+            stm_remove_atts.executeUpdate();
+            for (Attendence att : atts) {
+                String sql_insert_att = "INSERT INTO [Attendence]\n"
                         + "           ([leid]\n"
                         + "           ,[sid]\n"
                         + "           ,[description]\n"
@@ -49,13 +50,12 @@ public class LessionDBContext extends DBContext<Lession> {
                 stm_insert_att.setString(3, att.getDescription());
                 stm_insert_att.setBoolean(4, att.isPresent());
                 stm_insert_att.executeUpdate();
-                
+
                 connection.commit();
 
-
-                    }
-          } catch (SQLException ex) {
-              Logger.getLogger(LessionDBContext.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(LessionDBContext.class.getName()).log(Level.SEVERE, null, ex);
             try {
                 connection.rollback();
             } catch (SQLException ex1) {
@@ -67,14 +67,9 @@ public class LessionDBContext extends DBContext<Lession> {
             } catch (SQLException ex) {
                 Logger.getLogger(LessionDBContext.class.getName()).log(Level.SEVERE, null, ex);
             }
-          }
-      }
-    
-    
-    
-    
-    
-    
+        }
+    }
+
     public ArrayList<Lession> getBy(int lid, Date from, Date to) {
         ArrayList<Lession> lessions = new ArrayList<>();
         try {
@@ -95,48 +90,48 @@ public class LessionDBContext extends DBContext<Lession> {
             stm.setDate(2, from);
             stm.setDate(3, to);
             ResultSet rs = stm.executeQuery();
-            while(rs.next())
-            {
+            while (rs.next()) {
                 Lession les = new Lession();
                 StudentGroup g = new StudentGroup();
                 Subject s = new Subject();
                 TimeSlot slot = new TimeSlot();
                 Room r = new Room();
                 Lecturer l = new Lecturer();
-                
+
                 les.setId(rs.getInt("leid"));
                 les.setAttended(rs.getBoolean("isAttended"));
                 les.setDate(rs.getDate("date"));
-                
+
                 g.setId(rs.getInt("gid"));
                 g.setName(rs.getString("gname"));
                 s.setId(rs.getInt("subid"));
                 s.setName(rs.getString("suname"));
                 g.setSubject(s);
                 les.setGroup(g);
-                
+
                 slot.setId(rs.getInt("tid"));
                 slot.setName(rs.getString("tname"));
                 les.setSlot(slot);
-                
+
                 r.setId(rs.getInt("rid"));
                 r.setName(rs.getString("rname"));
-                les.setRoom(r); 
-                
+                les.setRoom(r);
+
                 l.setId(rs.getInt("lid"));
                 l.setName(rs.getString("lname"));
-                les.setLecturer(l); 
-                
+                les.setLecturer(l);
+
                 lessions.add(les);
             }
         } catch (SQLException ex) {
             Logger.getLogger(LessionDBContext.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
+
         return lessions;
-        
+
     }
-     public ArrayList<Attendence> getAttendencesByLession(int leid) {
+
+    public ArrayList<Attendence> getAttendencesByLession(int leid) {
         ArrayList<Attendence> atts = new ArrayList<>();
         try {
             String sql = "SELECT \n"
@@ -176,7 +171,7 @@ public class LessionDBContext extends DBContext<Lession> {
         return atts;
     }
 
-      public ArrayList<Student> getStudentsByLession(int leid) {
+    public ArrayList<Student> getStudentsByLession(int leid) {
         ArrayList<Student> students = new ArrayList<>();
         try {
             String sql = "SELECT \n"
@@ -188,8 +183,7 @@ public class LessionDBContext extends DBContext<Lession> {
             PreparedStatement stm = connection.prepareStatement(sql);
             stm.setInt(1, leid);
             ResultSet rs = stm.executeQuery();
-            while(rs.next())
-            {
+            while (rs.next()) {
                 Student s = new Student();
                 s.setId(rs.getInt("sid"));
                 s.setName(rs.getString("sname"));
