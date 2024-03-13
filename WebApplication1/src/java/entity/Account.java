@@ -11,7 +11,8 @@ package entity;
 public class Account {
     private String username;
     private String password;
-    private String displayname;
+    
+    private String sid;
 
     public String getUsername() {
         return username;
@@ -29,12 +30,14 @@ public class Account {
         this.password = password;
     }
 
-    public String getDisplayname() {
-        return displayname;
+    public String getSid() {
+        return sid;
     }
 
-    public void setDisplayname(String displayname) {
-        this.displayname = displayname;
+    public void setSid(String sid) {
+        this.sid = sid;
     }
+
+   
     
 }
