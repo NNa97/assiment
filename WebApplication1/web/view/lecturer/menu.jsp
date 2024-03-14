@@ -12,6 +12,6 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <a href="timetable?id=${param.id}">
+        
     </body>
 </html>

@@ -35,7 +35,7 @@
         </tr>
        
         <tr>
-            <th >${requestScope.score.nameStudent}   </th>
+            <th >${requestScope.score.nameStudent}  </th>
             <th >${requestScope.score.nameSuject}</th>
             <th >${requestScope.score.active}</th>
             <th >${requestScope.score.pt1}</th>

@@ -31,7 +31,7 @@ public class ScoreDBContext extends DBContext<Score> {
 
             if (rs.next()) {
                 Score score = new Score();
-//                slot.setName(rs.getString("tname"));
+
                 score.setNameStudent(rs.getString("sname"));
                 score.setNameSuject(rs.getString("suname"));
                 score.setActive(rs.getFloat("actlearn"));

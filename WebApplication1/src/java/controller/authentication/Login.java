@@ -65,7 +65,8 @@ public class Login extends HttpServlet {
         if (account != null) {
             HttpSession session = request.getSession();
             session.setAttribute("account", account);
-               response.getWriter().println("login successful!");
+               request.getRequestDispatcher("view/lecturer/menu.jsp").forward(request, response);
+          //response.getWriter().println("login successful!");
            //response.sendRedirect("student?id=" +  );
         } else {
             response.getWriter().println("login failed");
