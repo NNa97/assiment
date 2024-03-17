@@ -12,6 +12,13 @@ public class Lecturer {
     private int id;
     private String name;
 
+    public Lecturer( String name) {
+        this.name = name;
+    }
+
+    public Lecturer() {
+    }
+
     public int getId() {
         return id;
     }

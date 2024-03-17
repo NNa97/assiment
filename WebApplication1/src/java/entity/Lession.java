@@ -3,15 +3,16 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package entity;
+
 import java.sql.*;
 import java.util.ArrayList;
-        
 
 /**
  *
  * @author USER
  */
 public class Lession {
+
     private int id;
     private Date date;
     private boolean attended;
@@ -19,7 +20,44 @@ public class Lession {
     private TimeSlot slot;
     private Room room;
     private Lecturer lecturer;
-    private ArrayList<Attendence> atts = new ArrayList<>();
+    private Attendence attendence;
+    private Subject subject;
+
+    public Lession() {
+    }
+
+    public Lession(int id, Date date, boolean attended, StudentGroup group, TimeSlot slot, Room room, Lecturer lecturer, Attendence attendence, Subject subject) {
+        this.id = id;
+        this.date = date;
+        this.attended = attended;
+        this.group = group;
+        this.slot = slot;
+        this.room = room;
+        this.lecturer = lecturer;
+        this.attendence = attendence;
+        this.subject = subject;
+    }
+
+    
+    
+    
+    
+    public Subject getSubject() {
+        return subject;
+    }
+
+    public void setSubject(Subject subject) {
+        this.subject = subject;
+    }
+
+    
+    public Attendence getAttendence() {
+        return attendence;
+    }
+
+    public void setAttendence(Attendence attendence) {
+        this.attendence = attendence;
+    }
 
     public int getId() {
         return id;
@@ -77,12 +115,4 @@ public class Lession {
         this.lecturer = lecturer;
     }
 
-    public ArrayList<Attendence> getAtts() {
-        return atts;
-    }
-
-    public void setAtts(ArrayList<Attendence> atts) {
-        this.atts = atts;
-    }
-    
 }

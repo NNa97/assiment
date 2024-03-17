@@ -90,7 +90,8 @@
                 margin-right: 0.5em;
             }
             .haa{
-                display: flex;justify-content: space-evenly
+                display: flex;
+                justify-content: space-evenly
             }
 
 
@@ -100,13 +101,13 @@
 
     </head>
     <body>
-       
-          
-        <div class ="haa">
-        <h1><span>FPT University Academic Portal</span>
-                </h1>
 
-            
+
+        <div class ="haa">
+            <h1><span>FPT University Academic Portal</span>
+            </h1>
+
+
             <div class="col-md-4">
                 <table>
                     <tr>
@@ -115,9 +116,9 @@
                     </tr>
                     <tr>
                         <td><a href="https://apps.apple.com/app/id1527723314">
-                            <img src="https://fap.fpt.edu.vn/images/app-store.png" style="width: 120px; height: 40px" alt="apple store" /></a></td>
+                                <img src="https://fap.fpt.edu.vn/images/app-store.png" style="width: 120px; height: 40px" alt="apple store" /></a></td>
                         <td><a href="https://play.google.com/store/apps/details?id=com.fuct">
-                            <img src="https://fap.fpt.edu.vn/images/play-store.png" style="width: 120px; height: 40px" alt="google store" /></a></td>
+                                <img src="https://fap.fpt.edu.vn/images/play-store.png" style="width: 120px; height: 40px" alt="google store" /></a></td>
 
                     </tr>
                 </table>
@@ -125,37 +126,37 @@
         </div>
         <div class="container">
             <div class="login-container">
-            <h2>Academic Portal Login</h2>
-            <form action="login" method="post">
-                <div class="input-group">
-                    <label for="campus">Campus</label>
+                <h2>Academic Portal Login</h2>
+                <form action="login" method="post">
+                    <div class="input-group">
+                        <label for="campus">Campus</label>
 
-                    <select  name="campus">
-                        <option value="hanoi">Hà Nội</option>
-                        <option value="hochiminh">Hồ Chí Minh</option>
-                        <option value="danang">Đà Nãng</option>
-                        <option value="quynhon">Quy Nhơn</option>
-                    </select>
+                        <select  name="campus">
+                            <option value="hanoi">Hà Nội</option>
+                            <option value="hochiminh">Hồ Chí Minh</option>
+                            <option value="danang">Đà Nãng</option>
+                            <option value="quynhon">Quy Nhơn</option>
+                        </select>
 
-                    <label for="username">Username</label>
-                    <input type="text" id="username" name="username" required>
-                </div>
-                <div class="input-group">
-                    <label for="password">Password</label>
-                    <input type="password" id="password" name="password" required>
-                </div>
-                <button type="submit">Login</button>
-            </form>
+                        <label for="username">Username</label>
+                        <input type="text" id="username" name="username" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" required>
+                    </div>
+                    <button type="submit">Login</button>
+                </form>
 
-        </div>
-            
+            </div>
+
         </div> 
-          <td>
-                                            <p style="text-align: center">
-                                                © Powered by <a href="http://fpt.edu.vn" target="_blank">FPT University</a>&nbsp;|&nbsp;
-        <a href="http://cms.fpt.edu.vn/" target="_blank">CMS</a>&nbsp;|&nbsp; <a href="http://library.fpt.edu.vn" target="_blank">library</a>&nbsp;|&nbsp; <a href="http://library.books24x7.com" target="_blank">books24x7</a>
-                                                <span id="ctl00_lblHelpdesk"></span>
-                                            </p>
-                                        </td>
-    </body>
+    <td>
+        <p style="text-align: center">
+            © Powered by <a href="http://fpt.edu.vn" target="_blank">FPT University</a>&nbsp;|&nbsp;
+            <a href="http://cms.fpt.edu.vn/" target="_blank">CMS</a>&nbsp;|&nbsp; <a href="http://library.fpt.edu.vn" target="_blank">library</a>&nbsp;|&nbsp; <a href="http://library.books24x7.com" target="_blank">books24x7</a>
+            <span id="ctl00_lblHelpdesk"></span>
+        </p>
+    </td>
+</body>
 </html>

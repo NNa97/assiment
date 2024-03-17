@@ -16,6 +16,10 @@
         <servlet-name>Login</servlet-name>
         <servlet-class>controller.authentication.Login</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>TimeTBSControler</servlet-name>
+        <servlet-class>controller.lecturer.TimeTBSControler</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>timetable</servlet-name>
         <url-pattern>/timetable</url-pattern>
@@ -31,5 +35,9 @@
     <servlet-mapping>
         <servlet-name>Login</servlet-name>
         <url-pattern>/login</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>TimeTBSControler</servlet-name>
+        <url-pattern>/tbstudent</url-pattern>
     </servlet-mapping>
 </web-app>

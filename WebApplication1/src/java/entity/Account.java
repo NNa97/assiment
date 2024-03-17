@@ -9,10 +9,29 @@ package entity;
  * @author USER
  */
 public class Account {
+
     private String username;
     private String password;
-    
+
     private String sid;
+    private String lid;
+
+    public Account(String username, String password) {
+        this.username = username;
+        this.password = password;
+    }
+
+    public Account() {
+    }
+
+    
+    public String getLid() {
+        return lid;
+    }
+
+    public void setLid(String lid) {
+        this.lid = lid;
+    }
 
     public String getUsername() {
         return username;
@@ -38,6 +57,4 @@ public class Account {
         this.sid = sid;
     }
 
-   
-    
 }

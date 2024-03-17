@@ -12,6 +12,13 @@ public class Room {
     private int id;
     private String name;
 
+    public Room() {
+    }
+
+    public Room(String name) {
+        this.name = name;
+    }
+
     public int getId() {
         return id;
     }

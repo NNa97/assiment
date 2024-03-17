@@ -3,7 +3,8 @@
     Created on : Mar 13, 2024, 4:02:55 PM
     Author     : USER
 --%>
-
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html
     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -48,6 +49,12 @@
     </head>
 
     <body>
+        <%
+            HttpSession sess = request.getSession();
+            if(sess.getAttribute("account")==null){
+                response.sendRedirect("login.jsp");
+            }
+        %>
         <div class="container">
 
             <div class="row">
@@ -92,7 +99,7 @@
                         <div id="ctl00_divUser" style="float: right; margin-right: 16px;">
                             <a href="?view=user">
                                 <span id="ctl00_lblLogIn" class="label label-success">namdnhe176906</span></a> | <a
-                                href="?logout=true" class="label label-success">logout</a> |
+                                href="login?check=1" class="label label-success">logout</a> |
                             <span id="ctl00_lblCampusName" class="label label-success"> CAMPUS: FPTU-Hòa Lạc</span>
                         </div>
 
@@ -137,8 +144,19 @@
                                         <br />
                                         TRƯỜNG ĐẠI HỌC FPT
                                         <br />
+                                        <br/>
+                                        <!--student-->
+                                        <c:if test="${stu!=null}">
+                                            <a href="tbstudent?sid=${stu}">Xem thoi khoa bieu</a><br/>
+                                            <a href="#">Check diem danh</a><br/>
+                                            <a href="score?sid=${stu}">Xem diem</a><br/>
+                                        </c:if>
 
-
+                                        <c:if test="${lec!=null}">
+                                            <!--giaovien-->
+                                            <a href="timetable?id=${lec}">Diem danh</a><br/>
+                                            <a href="#">xem diem cac lop</a><br/>
+                                        </c:if>
 
 
                                         <br class="Apple-interchange-newline" />

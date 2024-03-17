@@ -18,7 +18,7 @@ import java.util.logging.Logger;
 public class AccountDBContext extends DBContext<Account> {
      public Account getByUsernamePassword(String username, String password) {
         try {
-            String sql = "SELECT username,password,sid FROM Account\n"
+            String sql = "SELECT * FROM Account\n"
                     + "WHERE username = ? AND password = ?";
             PreparedStatement stm = connection.prepareStatement(sql);
             stm.setString(1, username);
@@ -27,8 +27,11 @@ public class AccountDBContext extends DBContext<Account> {
             if(rs.next())
             {
                 Account account = new Account();
+                
                 account.setUsername(username);
                 account.setSid(rs.getString("sid"));
+                account.setLid(rs.getString("lid"));
+                
                 return account;
             }
         } catch (SQLException ex) {
