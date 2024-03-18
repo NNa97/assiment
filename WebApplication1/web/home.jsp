@@ -97,8 +97,8 @@
                             <input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="F84FD099" />
                         </div>
                         <div id="ctl00_divUser" style="float: right; margin-right: 16px;">
-                            <a href="?view=user">
-                                <span id="ctl00_lblLogIn" class="label label-success">namdnhe176906</span></a> | <a
+                           
+                                <span id="ctl00_lblLogIn" class="label label-success">${account.username}</span> | <a
                                 href="login?check=1" class="label label-success">logout</a> |
                             <span id="ctl00_lblCampusName" class="label label-success"> CAMPUS: FPTU-Hòa Lạc</span>
                         </div>
@@ -147,8 +147,7 @@
                                         <br/>
                                         <!--student-->
                                         <c:if test="${stu!=null}">
-                                            <a href="tbstudent?sid=${stu}">Xem thoi khoa bieu</a><br/>
-                                            <a href="#">Check diem danh</a><br/>
+                                            <a href="tbstudent?sid=${stu}">Xem thoi khoa bieu</a><br/>                                      
                                             <a href="score?sid=${stu}">Xem diem</a><br/>
                                         </c:if>
 

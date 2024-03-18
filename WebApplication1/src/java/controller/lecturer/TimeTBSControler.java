@@ -5,9 +5,11 @@
 
 package controller.lecturer;
 
+import controller.authentication.BaseRequiredAuthenticationController;
 import dal.AccountDBContext;
 import dal.AttendenceDBContext;
 import dal.ScoreDBContext;
+import entity.Account;
 import entity.Lession;
 import entity.Score;
 import java.io.IOException;
@@ -22,7 +24,7 @@ import java.util.ArrayList;
  *
  * @author USER
  */
-public class TimeTBSControler extends HttpServlet {
+public class TimeTBSControler extends BaseRequiredAuthenticationController {
    
     /** 
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code> methods.
@@ -91,5 +93,15 @@ public class TimeTBSControler extends HttpServlet {
     public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
+
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp, Account account) throws ServletException, IOException {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp, Account account) throws ServletException, IOException {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 
 }

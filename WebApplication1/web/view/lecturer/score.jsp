@@ -15,14 +15,26 @@
     <body>
         <form action="score" method="get">
           
-          <input type="hidden" name="sid" value="${param.id}"/>
-          <input type="hidden" name="subid" value="${param.id}"/>
+          <input type="hidden" name="sid" value="${param.sid}"/>
+          
+          
+         
+          
+           Category: <select  name="subid"><br>
+                <c:forEach items="${requestScope.subject}" var="s">
+                    <option value="${s.id}">${s.name}</option>
+                </c:forEach>
+                    <!--Them cai submit khi an vao nua
+                    hoac la co the submit khi chon luon-->
+            </select><br>
+            <!--vd nhe-->
+            <button type="submit">Submit</button>
+            <!--hoac m co the submit khi ma select cai option khac cai nay dung javascript de submit khi chon lua chon khac--> 
+            
            </form>
      <h1>Student Scores</h1>
+     
     <table border="2">
-         
-        
-          
           <tr>
             <th>Student Name</th>
             <th>Subject Name</th>

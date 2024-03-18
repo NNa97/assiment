@@ -14,7 +14,8 @@ public class Subject {
 
     public Subject() {
     }
-
+     
+    
     public Subject(int id, String name) {
         this.id = id;
         this.name = name;

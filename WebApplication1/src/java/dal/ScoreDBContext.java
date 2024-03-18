@@ -24,9 +24,17 @@ public class ScoreDBContext extends DBContext<Score> {
                     + "from Score sc Inner join Student s on s.[sid]=sc.[sid]\n"
                     + "         Inner join Subject su on su.[subid]=sc.[subid]\n"
                     + " where s.sid = ? and su.subid = ?";
+            if (subid == 0) {
+                sql = "select s.sname,su.suname,sc.actlearn,sc.pt1,sc.pt2,sc.project,sc.final,sc.[avg]\n"
+                        + "from Score sc Inner join Student s on s.[sid]=sc.[sid]\n"
+                        + "         Inner join Subject su on su.[subid]=sc.[subid]\n"
+                        + " where s.sid = ? ";
+            }
             PreparedStatement stm = connection.prepareStatement(sql);
             stm.setInt(1, sid);
-            stm.setInt(2, subid);
+            if (subid != 0) {
+                stm.setInt(2, subid);
+            }
             ResultSet rs = stm.executeQuery();
 
             if (rs.next()) {
@@ -48,7 +56,5 @@ public class ScoreDBContext extends DBContext<Score> {
         }
         return null;
     }
-
-    
 
 }
