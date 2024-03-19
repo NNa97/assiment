@@ -5,7 +5,7 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@taglib uri="/WEB-INF/tlds/CustomAtribute.tld" prefix="at" %>
+<%@taglib uri="/WEB-INF/tlds/CustomAtribu.tld" prefix="at" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -14,6 +14,6 @@
     </head>
     <body>
         <h1>Hello World!</h1>
-        <at:CustomAtribute name = "An" time="11/11/2011" />
+        <at:CustomAtribute date="25/11/20" />
     </body>
 </html>

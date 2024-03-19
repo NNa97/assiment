@@ -2,13 +2,13 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/TagHandler.java to edit this template
  */
+package custom.tag;
 
-import jakarta.servlet.jsp.tagext.SimpleTagSupport;
+import jakarta.servlet.jsp.JspException;
 import jakarta.servlet.jsp.JspWriter;
 import jakarta.servlet.jsp.JspException;
 import jakarta.servlet.jsp.tagext.JspFragment;
 import jakarta.servlet.jsp.tagext.SimpleTagSupport;
-import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -18,8 +18,7 @@ import java.util.Date;
  */
 public class CustomAtribute extends SimpleTagSupport {
 
-    private String name;
-    private String time;
+    private String date;
 
     /**
      * Called by the container to invoke this tag. The implementation of this
@@ -36,17 +35,8 @@ public class CustomAtribute extends SimpleTagSupport {
             //
             // out.println("<strong>" + attribute_1 + "</strong>");
             // out.println("    <blockquote>");
-            if(name.isEmpty()){
-                name = "no name";
-            }
-            if(time.isEmpty()){
-                time = "dd/MM/yyyy";
-            }
-            Date date =new Date();
-            String dataFormat = new SimpleDateFormat(time).format(date);
-            out.print("ten la "+ name +"<br>");
-            out.print("ngay thang:"+dataFormat);
-            
+            String[] s = date.split("/");
+            out.print(String.format("Ngay %s, thang %s, nam %s", s[0], s[1], s[2]));
             JspFragment f = getJspBody();
             if (f != null) {
                 f.invoke(out);
@@ -61,12 +51,8 @@ public class CustomAtribute extends SimpleTagSupport {
         }
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setTime(String time) {
-        this.time = time;
+    public void setDate(String date) {
+        this.date = date;
     }
     
 }
