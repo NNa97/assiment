@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Servlet.java to edit this template
  */
 
-package controller.student;
+package controller.authentication;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -55,7 +55,7 @@ public class MenuController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
-        
+        request.getRequestDispatcher("home.jsp").forward(request, response);
     } 
 
     /** 

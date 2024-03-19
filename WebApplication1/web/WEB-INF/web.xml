@@ -10,7 +10,7 @@
     </servlet>
     <servlet>
         <servlet-name>score</servlet-name>
-        <servlet-class>controller.lecturer.ScoreTableController</servlet-class>
+        <servlet-class>controller.student.ScoreTableController</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>Login</servlet-name>
@@ -18,7 +18,11 @@
     </servlet>
     <servlet>
         <servlet-name>TimeTBSControler</servlet-name>
-        <servlet-class>controller.lecturer.TimeTBSControler</servlet-class>
+        <servlet-class>controller.student.TimeTBSControler</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ScoreLecController</servlet-name>
+        <servlet-class>controller.lecturer.ScoreLecController</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>timetable</servlet-name>
@@ -39,5 +43,9 @@
     <servlet-mapping>
         <servlet-name>TimeTBSControler</servlet-name>
         <url-pattern>/tbstudent</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ScoreLecController</servlet-name>
+        <url-pattern>/lescore</url-pattern>
     </servlet-mapping>
 </web-app>

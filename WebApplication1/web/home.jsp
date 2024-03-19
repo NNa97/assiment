@@ -154,13 +154,13 @@
                                         <c:if test="${lec!=null}">
                                             <!--giaovien-->
                                             <a href="timetable?id=${lec}">Diem danh</a><br/>
-                                            <a href="#">xem diem cac lop</a><br/>
+                                            <a href="lescore?sid=0&subid=0">xem diem hoc sinh</a><br/>
                                         </c:if>
 
 
                                         <br class="Apple-interchange-newline" />
                                         <br class="Apple-interchange-newline" />
-                                        <a class="btn btn-success" href="Student.aspx">Trang chủ</a>
+                                    
 
 
 

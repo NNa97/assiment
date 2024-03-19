@@ -48,9 +48,14 @@
         }
     </style>
 </head>
+
+
+              
+              <br/>
 <body>
     <table border="1">
         <tbody>
+            
             <tr>
                 <th>Date</th>
                 <th>Lecturer</th>
@@ -76,5 +81,6 @@
             </c:forEach>
         </tbody>
     </table>
+       
 </body>
 </html>
