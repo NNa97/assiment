@@ -82,7 +82,7 @@
           
             <button type="submit">Submit</button>
           
-            
+                  <a href="home">MENU</a><br/>
            </form>
      <h1>Student Scores</h1>
      

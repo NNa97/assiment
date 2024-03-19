@@ -114,6 +114,7 @@
     </head>
     <body class="container">
         <form action="att" method="POST">
+             <a href="home">MENU</a><br/>
             <input type="hidden" name="id" value="${param.id}" />
             <table border="1px">
                 <tr>

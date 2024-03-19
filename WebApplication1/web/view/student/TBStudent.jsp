@@ -55,7 +55,9 @@
 <body>
     <table border="1">
         <tbody>
-            
+        <form>
+             <a href="home">MENU</a><br/>
+        </form>
             <tr>
                 <th>Date</th>
                 <th>Lecturer</th>

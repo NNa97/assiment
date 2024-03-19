@@ -6,7 +6,7 @@
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -61,7 +61,7 @@
     </style>
     <body>
         <form action="score" method="get">
-
+                <a href="home">MENU</a><br/>
             <input type="hidden" name="sid" value="${param.sid}"/>
             Subject: <select  name="subid"><br>
                 <c:forEach items="${requestScope.subject}" var="s">

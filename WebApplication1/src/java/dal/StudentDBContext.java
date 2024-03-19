@@ -43,4 +43,25 @@ public class StudentDBContext extends DBContext {
         }
         return list;
     }
+     public ArrayList<Student> getByLession(int lid) {
+        ArrayList<Student> students = new ArrayList<>();
+        try {
+            String sql = "SELECT s.sid FROM Student s INNER JOIN Enrollment e ON s.[sid] = e.[sid]\n"
+                    + "	INNER JOIN StudentGroup g ON g.gid = e.gid\n"
+                    + "	INNER JOIN Lession les ON les.gid = g.gid\n"
+                    + "WHERE les.leid = ?";
+            PreparedStatement stm = connection.prepareStatement(sql);
+            stm.setInt(1, lid);
+            ResultSet rs = stm.executeQuery();
+            while (rs.next()) {
+                Student s = new Student();
+                s.setId(rs.getInt("sid"));
+                students.add(s);
+            }
+
+        } catch (SQLException ex) {
+            Logger.getLogger(StudentDBContext.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return students;
+    }
 }

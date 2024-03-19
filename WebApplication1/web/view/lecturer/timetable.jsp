@@ -145,7 +145,7 @@
         <input type="hidden" value="${param.id}" name="id"/>
         From: <input type="date" name="from" value="${requestScope.from}"/> -
         <input type="date" name="to" value="${requestScope.to}"/>
-        <input type="submit" value="View"/>
+        <input type="submit" value="View"/>  <a href="home">MENU</a><br/>
     </form>
             </th>
             <c:forEach items="${requestScope.dates}" var="d">
