@@ -36,7 +36,7 @@ public class CustomAtribute extends SimpleTagSupport {
             // out.println("<strong>" + attribute_1 + "</strong>");
             // out.println("    <blockquote>");
             String[] s = date.split("/");
-            out.print(String.format("Ngay %s, thang %s, nam %s", s[0], s[1], s[2]));
+            out.print(String.format("Ngày %s, Tháng %s, Năm %s", s[0], s[1], s[2]));
             JspFragment f = getJspBody();
             if (f != null) {
                 f.invoke(out);

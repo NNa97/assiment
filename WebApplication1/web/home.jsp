@@ -108,7 +108,7 @@
                         </div>
                         <ol class="breadcrumb">
                             <li>
-                                <span id="ctl00_lblNavigation"><a href='../Student.aspx'>Home</a>&nbsp;|&nbsp;<b>Thông
+                                <span id="ctl00_lblNavigation"><b>Thông
                                         báo</b></span>
                             </li>
                         </ol>
