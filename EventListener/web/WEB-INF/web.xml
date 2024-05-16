@@ -2,11 +2,11 @@
 <web-app version="6.0" xmlns="https://jakarta.ee/xml/ns/jakartaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd">
     <servlet>
         <servlet-name>logiin</servlet-name>
-        <servlet-class>Logincontroller</servlet-class>
+        <servlet-class>Controller.Logincontroller</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>PageViewController</servlet-name>
-        <servlet-class>PageViewController</servlet-class>
+        <servlet-class>Controller.PageViewController</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>logiin</servlet-name>
@@ -16,4 +16,8 @@
         <servlet-name>PageViewController</servlet-name>
         <url-pattern>/page</url-pattern>
     </servlet-mapping>
+    
+    <listener>
+        <listener-class>Controller.hewhe</listener-class>
+    </listener>
 </web-app>

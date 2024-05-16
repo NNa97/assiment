@@ -17,7 +17,7 @@ import java.util.logging.Logger;
 public class PageViewDBContext extends DBContext{
     public int getViews() {
         int views = 0;
-        String sql = "SELECT * FROM [Views]";
+        String sql = "SELECT views FROM [Views]";
         try {
 
             PreparedStatement stm = connection.prepareStatement(sql);
@@ -30,7 +30,12 @@ public class PageViewDBContext extends DBContext{
         }
         return views;
     }
-
+    public static void main(String[] args) {
+        PageViewDBContext pdb = new PageViewDBContext();
+                System.out.println(pdb.getViews());
+                pdb.updateViews(6);
+                System.out.println(pdb.getViews());     
+    }
     public void updateViews(int views) {
         String sql = "UPDATE [Views]\n"
                 + "   SET [views] = ?";

@@ -1,25 +1,24 @@
+package Controller;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Servlet.java to edit this template
  */
 
 
-
-import dal.Account;
-import dal.AccountDBContext;
+import dal.PageViewDBContext;
 import java.io.IOException;
 import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import jakarta.servlet.http.HttpSession;
 
 /**
  *
  * @author USER
  */
-public class Logincontroller extends HttpServlet {
+public class PageViewController extends HttpServlet {
    
     /** 
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code> methods.
@@ -36,10 +35,10 @@ public class Logincontroller extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet Logincontroller</title>");  
+            out.println("<title>Servlet PageViewController</title>");  
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet Logincontroller at " + request.getContextPath () + "</h1>");
+            out.println("<h1>Servlet PageViewController at " + request.getContextPath () + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
@@ -56,7 +55,10 @@ public class Logincontroller extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
-        request.getRequestDispatcher("login.jsp").forward(request, response);
+       PageViewDBContext pDB = new PageViewDBContext();
+        int views = pDB.getViews();
+        request.setAttribute("views",views );
+        request.getRequestDispatcher("page.jsp").forward(request, response);
     } 
 
     /** 
@@ -69,21 +71,7 @@ public class Logincontroller extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
-         String username = request.getParameter("username");
-        String password = request.getParameter("password");
-
-        AccountDBContext db = new AccountDBContext();
-        Account account = db.getByUsernamePassword(username, password);
-
-        if (account != null) {
-            HttpSession session = request.getSession();
-            session.setAttribute("acount", account);
-             response.getWriter().println("login Succesfull");
-        } else {
-            response.getWriter().println("login failed");
-        }
-        
-        
+        processRequest(request, response);
     }
 
     /** 
